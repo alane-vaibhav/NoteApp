@@ -1,3 +1,5 @@
+import { NO_NOTE } from "../pages/constant";
+
 const ModalView = ({ open, setOpen, selectedNote }) => {
   const closeModal = () => setOpen(false);
 
@@ -46,7 +48,7 @@ const ModalView = ({ open, setOpen, selectedNote }) => {
               </p>
             ) : (
               <p className="text-base text-gray-500 dark:text-gray-400">
-                No note selected.
+                {NO_NOTE}
               </p>
             )}
           </div>
