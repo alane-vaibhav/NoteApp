@@ -3,11 +3,14 @@ import Logo from "/src/assets/sticky-note.png";
 import Delete from "/src/assets/delete.png";
 import Sidebar from "./sidebar";
 import { CREATE_NOTES, MY_NOTES } from "../pages/constant";
+import { useIntl } from "react-intl";
 
 const MyNotes = () => {
   const [newNote, setnewNote] = useState(
     JSON.parse(localStorage.getItem("notes")) || []
   );
+  const { formatMessage } = useIntl();
+
   const [open, setOpen] = useState(false);
   const date = new Date();
   let day = date.getDate();
@@ -53,13 +56,13 @@ const MyNotes = () => {
       <div className="bg-gradient-to-br from-teal-300 to-teal-400 w-screen min-h-screen text-white pt-4 p-10">
         <div className="flex  items-center justify-center text-3xl font-bold space-y-1">
           <img src={Logo} alt="logo" />
-          <h1 className="mx-2.5">{MY_NOTES}</h1>
+          <h1 className="mx-2.5">{formatMessage({ id: MY_NOTES })}</h1>
         </div>
         <button
           className="bg-green-500 font-bold cursor-pointer outline-none border-none rounded-full p-2 mt-2"
           onClick={handleNotes}
         >
-          {CREATE_NOTES}
+          {formatMessage({ id: CREATE_NOTES })}
         </button>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 sm:gap-3 md:grid-cols-4 md:gap-0">

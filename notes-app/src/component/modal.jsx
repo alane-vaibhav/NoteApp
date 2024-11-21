@@ -1,9 +1,10 @@
+import { useIntl } from "react-intl";
 import { NO_NOTE } from "../pages/constant";
 
 const ModalView = ({ open, setOpen, selectedNote }) => {
   const closeModal = () => setOpen(false);
+  const { formatMessage } = useIntl();
 
-  console.log(selectedNote);
   return (
     <div
       id="default-modal"
@@ -48,7 +49,7 @@ const ModalView = ({ open, setOpen, selectedNote }) => {
               </p>
             ) : (
               <p className="text-base text-gray-500 dark:text-gray-400">
-                {NO_NOTE}
+                {formatMessage({ id: NO_NOTE })}
               </p>
             )}
           </div>
