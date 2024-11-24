@@ -52,7 +52,7 @@ const MyNotes = () => {
 
   return (
     <div className="w-screen flex">
-      <Sidebar className="h-screen min-w-40" />
+      <Sidebar className="h-screen max-w-20" />
       <div className="bg-gradient-to-br from-teal-300 to-teal-400 w-screen min-h-screen text-white pt-4 p-10">
         <div className="flex  items-center justify-center text-3xl font-bold space-y-1">
           <img src={Logo} alt="logo" />
@@ -74,7 +74,7 @@ const MyNotes = () => {
               <textarea
                 value={item}
                 onChange={(e) => handleNoteChange(index, e.target.value)}
-                className="w-2/3 max-w-md min-h-48 bg-gradient-to-br from-green-200 to-white text-gray-700 outline-none rounded-md p-5 "
+                className="w-3/4 min-w-35 min-h-40 bg-gradient-to-br from-green-200 to-white text-gray-700 outline-none rounded-md p-5 "
               />
               <img
                 src={Delete}

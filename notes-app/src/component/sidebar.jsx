@@ -16,11 +16,11 @@ const Sidebar = () => {
 
   useEffect(() => {
     setSelectedNote(noteTitle);
-  }, [data]);
+  }, [noteTitle]);
 
   return (
     <>
-      <div className="flex min-w-40 bg-gradient-to-br from-gray-600 to-gray-800 text-white flex-col gap-4 p-4">
+      <div className="flex max-w-30 bg-gradient-to-br from-gray-600 to-gray-800 text-white flex-col gap-4 p-4">
         <h1 className="m-4 h-20 p-3 border-4 items-center border-cyan-300 text-cyan-300 underline italic justify-center">
           {formatMessage({ id: MY_LIST })}
         </h1>
